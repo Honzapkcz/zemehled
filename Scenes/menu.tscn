@@ -1,0 +1,271 @@
+[gd_scene load_steps=12 format=3 uid="uid://j8cohefjrhkx"]
+
+[ext_resource type="PackedScene" uid="uid://d0qwmtp34n4v1" path="res://Scenes/person.tscn" id="1_cxap7"]
+[ext_resource type="Script" path="res://Scenes/menu.gd" id="1_gusrw"]
+[ext_resource type="AudioStream" uid="uid://dkx4uhk2irc0y" path="res://Assets/Sounds/memedrip.ogg" id="3_70num"]
+[ext_resource type="Texture2D" uid="uid://dyntndxt32vsc" path="res://Assets/earth_texture_by.png" id="3_dfpb5"]
+[ext_resource type="StyleBox" uid="uid://yivtfpayypbe" path="res://Assets/Styles/Window/ToolWindow.tres" id="5_o11jv"]
+[ext_resource type="Texture2D" uid="uid://cg0koet6pa2ip" path="res://Assets/Styles/Window/CloseBtn.png" id="6_esyai"]
+[ext_resource type="AudioStream" uid="uid://5hpclfmlks3n" path="res://Assets/Sounds/move1.ogg" id="7_x8yic"]
+[ext_resource type="AudioStream" uid="uid://g6acn6voktqu" path="res://Assets/Sounds/move2.ogg" id="8_dfi11"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_vbovb"]
+shading_mode = 0
+albedo_texture = ExtResource("3_dfpb5")
+
+[sub_resource type="LabelSettings" id="LabelSettings_gyvxe"]
+font_size = 150
+shadow_size = 12
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(4, 4)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_e0i0u"]
+playback_mode = 1
+streams_count = 2
+stream_0/stream = ExtResource("7_x8yic")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("8_dfi11")
+stream_1/weight = 1.0
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gusrw")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -176.0
+offset_bottom = 176.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_dfpb5")
+
+[node name="D3" type="SubViewportContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="D3"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="Person" parent="D3/SubViewport" instance=ExtResource("1_cxap7")]
+
+[node name="Camera3D" type="Camera3D" parent="D3/SubViewport"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.97135, 0.0273852, -0.00344515)
+current = true
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="D3/SubViewport"]
+transform = Transform3D(0.934204, -0.356738, 0, 0.356738, 0.934204, 0, 0, 0, 1, -53.5962, 0, 0)
+radius = 50.0
+material = SubResource("ORMMaterial3D_vbovb")
+
+[node name="Menu" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Layout" type="VBoxContainer" parent="Menu"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Menu/Layout"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 150
+text = "Zeměhleď"
+label_settings = SubResource("LabelSettings_gyvxe")
+horizontal_alignment = 3
+
+[node name="Play" type="Button" parent="Menu/Layout"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Hrát"
+
+[node name="Settings" type="Button" parent="Menu/Layout"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Nastavení"
+
+[node name="Exit" type="Button" parent="Menu/Layout"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Odejít"
+
+[node name="Settings" type="Panel" parent="."]
+visible = false
+custom_minimum_size = Vector2(800, 500)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 576.0
+offset_top = -508.0
+offset_right = 1376.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = ExtResource("5_o11jv")
+
+[node name="Borders" type="MarginContainer" parent="Settings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 22
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Layout" type="VBoxContainer" parent="Settings/Borders"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Settings/Borders/Layout"]
+layout_mode = 2
+text = "Tlačítko"
+
+[node name="Header" type="MarginContainer" parent="Settings"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 19.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 2
+
+[node name="Close" type="Button" parent="Settings/Header"]
+layout_mode = 2
+size_flags_horizontal = 8
+icon = ExtResource("6_esyai")
+flat = true
+
+[node name="Title" type="Label" parent="Settings/Header"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Nastavení"
+
+[node name="Play" type="Panel" parent="."]
+custom_minimum_size = Vector2(800, 500)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_right = 400.0
+offset_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = ExtResource("5_o11jv")
+
+[node name="Borders" type="MarginContainer" parent="Play"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 22
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="GridContainer" type="GridContainer" parent="Play/Borders"]
+layout_mode = 2
+columns = 2
+
+[node name="Layout" type="HBoxContainer" parent="Play/Borders/GridContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="SpinBox" type="SpinBox" parent="Play/Borders/GridContainer/Layout"]
+layout_mode = 2
+max_value = 59.0
+suffix = "m"
+
+[node name="SpinBox2" type="SpinBox" parent="Play/Borders/GridContainer/Layout"]
+layout_mode = 2
+max_value = 59.0
+value = 30.0
+suffix = "s"
+
+[node name="Play" type="Button" parent="Play/Borders/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Hrát"
+
+[node name="List" type="ItemList" parent="Play/Borders/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+item_count = 1
+item_0/text = "Hrát"
+
+[node name="Content" type="VBoxContainer" parent="Play/Borders/GridContainer"]
+layout_mode = 2
+
+[node name="Description" type="Label" parent="Play/Borders/GridContainer/Content"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Hrát"
+
+[node name="Image" type="TextureRect" parent="Play/Borders/GridContainer/Content"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Header" type="MarginContainer" parent="Play"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 19.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 2
+
+[node name="Close" type="Button" parent="Play/Header"]
+layout_mode = 2
+size_flags_horizontal = 8
+icon = ExtResource("6_esyai")
+flat = true
+
+[node name="Title" type="Label" parent="Play/Header"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Hrát"
+
+[node name="ThemePlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_70num")
+autoplay = true
+
+[node name="Effect" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_e0i0u")
+volume_db = 10.0
+
+[connection signal="pressed" from="Menu/Layout/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Menu/Layout/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Menu/Layout/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Settings/Header/Close" to="." method="_on_settings_close_pressed"]
+[connection signal="pressed" from="Play/Header/Close" to="." method="_on_play_close_pressed"]

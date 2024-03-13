@@ -1,0 +1,8 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://bdcjy2dajl0w3"]
+
+[ext_resource type="Texture2D" uid="uid://cd01i87o5blns" path="res://Assets/Styles/General/DisabledMask.png" id="1"]
+
+[resource]
+texture = ExtResource("1")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1

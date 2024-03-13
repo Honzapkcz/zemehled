@@ -1,0 +1,12 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://yivtfpayypbe"]
+
+[ext_resource type="Texture2D" uid="uid://cs22w0l1vt0ko" path="res://Assets/Styles/Window/ToolWindow.png" id="1"]
+
+[resource]
+texture = ExtResource("1")
+texture_margin_left = 5.0
+texture_margin_top = 20.0
+texture_margin_right = 5.0
+texture_margin_bottom = 3.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1

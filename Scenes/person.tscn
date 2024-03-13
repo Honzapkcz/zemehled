@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0qwmtp34n4v1"]
+
+[ext_resource type="Texture2D" uid="uid://dyntndxt32vsc" path="res://Assets/earth_texture_by.png" id="1_2p5ej"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_phxl0"]
+shading_mode = 0
+specular_mode = 2
+albedo_texture = ExtResource("1_2p5ej")
+
+[node name="Person" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0126177, 0)
+size = Vector3(0.5, 2, 1)
+material = SubResource("ORMMaterial3D_phxl0")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.51262, 0.237747)
+radius = 0.25
+height = 1.0
+material = SubResource("ORMMaterial3D_phxl0")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.51262, -0.245873)
+radius = 0.25
+height = 1.0
+material = SubResource("ORMMaterial3D_phxl0")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.730985, -1.00326)
+radius = 0.25
+height = 1.0
+material = SubResource("ORMMaterial3D_phxl0")
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.730985, 1.00093)
+radius = 0.25
+height = 1.0
+material = SubResource("ORMMaterial3D_phxl0")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48738, 0)
+material = SubResource("ORMMaterial3D_phxl0")
