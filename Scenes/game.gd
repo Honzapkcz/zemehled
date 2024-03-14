@@ -9,3 +9,11 @@ class ZemeGame:
 	var map_image: String
 	var images: PackedStringArray
 	var positions: PackedVector2Array
+	
+	func _init(path := ""):
+		if path.is_empty():
+			return
+		self.load(path)
+	
+	func load(path):
+		pass
