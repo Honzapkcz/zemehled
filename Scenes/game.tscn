@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dshdwd2oxu8lj"]
+[gd_scene load_steps=3 format=3 uid="uid://dshdwd2oxu8lj"]
 
 [ext_resource type="StyleBox" uid="uid://duyam4758ulao" path="res://Assets/Styles/General/Box.tres" id="1_iaj65"]
+[ext_resource type="Script" path="res://Scenes/game.gd" id="1_tv7un"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_tv7un")
 
 [node name="Border" type="Panel" parent="."]
 layout_mode = 1
@@ -80,6 +82,18 @@ offset_top = 3.0
 offset_right = 145.0
 offset_bottom = 25.0
 theme_override_constants/separation = 0
+
+[node name="MenuButton" type="MenuButton" parent="Status"]
+layout_mode = 2
+text = "Menu"
+flat = false
+item_count = 3
+popup/item_0/text = "Přeskočit"
+popup/item_0/id = 2
+popup/item_1/text = "Nastavení"
+popup/item_1/id = 0
+popup/item_2/text = "Odejít"
+popup/item_2/id = 1
 
 [node name="Round" type="LineEdit" parent="Status"]
 layout_mode = 2
