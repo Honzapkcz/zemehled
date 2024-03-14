@@ -200,12 +200,12 @@ columns = 2
 layout_mode = 2
 alignment = 2
 
-[node name="SpinBox" type="SpinBox" parent="Play/Borders/GridContainer/Layout"]
+[node name="Minutes" type="SpinBox" parent="Play/Borders/GridContainer/Layout"]
 layout_mode = 2
 max_value = 59.0
 suffix = "m"
 
-[node name="SpinBox2" type="SpinBox" parent="Play/Borders/GridContainer/Layout"]
+[node name="Seconds" type="SpinBox" parent="Play/Borders/GridContainer/Layout"]
 layout_mode = 2
 max_value = 59.0
 value = 30.0
@@ -268,4 +268,6 @@ volume_db = 10.0
 [connection signal="pressed" from="Menu/Layout/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Menu/Layout/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Settings/Header/Close" to="." method="_on_settings_close_pressed"]
+[connection signal="pressed" from="Play/Borders/GridContainer/Play" to="." method="_on_play_game_pressed"]
+[connection signal="item_selected" from="Play/Borders/GridContainer/List" to="." method="_on_list_item_selected"]
 [connection signal="pressed" from="Play/Header/Close" to="." method="_on_play_close_pressed"]

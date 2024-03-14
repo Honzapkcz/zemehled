@@ -4,7 +4,11 @@ extends Control
 @onready var person: Node3D = $D3/SubViewport/Person
 @onready var planet: Node3D = $D3/SubViewport/CSGSphere3D
 @onready var label: Label = $Menu/Layout/Label
-@onready var rot_speed: float = 1.5
+@onready var minutes: SpinBox = $Play/Borders/GridContainer/Layout/Minutes
+@onready var seconds: SpinBox = $Play/Borders/GridContainer/Layout/Seconds 
+@onready var description: Label = $Play/Borders/GridContainer/Content/Description
+@onready var image: TextureRect = $Play/Borders/GridContainer/Content/Image
+var rot_speed: float = 1.5
 var rot: Vector3
 var lbl: int
 var pop_open: bool
@@ -65,3 +69,11 @@ func _on_play_close_pressed():
 	pop_open = false
 	get_tree().create_tween().tween_property($Play, "position:y", 648, 1.0)
 	$Effect.play()
+
+
+func _on_play_game_pressed():
+	pass # Replace with function body.
+
+
+func _on_list_item_selected(index):
+	pass # Replace with function body.
