@@ -20,27 +20,6 @@ grow_vertical = 2
 size_flags_vertical = 3
 theme_override_styles/panel = ExtResource("1_iaj65")
 
-[node name="Layout" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="Layout"]
-layout_mode = 2
-text = "Time"
-
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 40.0
-grow_horizontal = 0
-
 [node name="Margin" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -61,3 +40,53 @@ stretch = true
 handle_input_locally = false
 size = Vector2i(1146, 642)
 render_target_update_mode = 4
+
+[node name="Image" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -500.0
+offset_bottom = 300.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+
+[node name="Image" type="Panel" parent="Image"]
+custom_minimum_size = Vector2(500, 300)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_iaj65")
+
+[node name="Border" type="MarginContainer" parent="Image/Image"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Texture" type="TextureRect" parent="Image/Image/Border"]
+layout_mode = 2
+expand_mode = 1
+
+[node name="Status" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 145.0
+offset_bottom = 25.0
+theme_override_constants/separation = 0
+
+[node name="Round" type="LineEdit" parent="Status"]
+layout_mode = 2
+text = "99/99"
+expand_to_text_length = true
+
+[node name="Time" type="LineEdit" parent="Status"]
+layout_mode = 2
+text = "59:59"
+expand_to_text_length = true
