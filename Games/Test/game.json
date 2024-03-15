@@ -1,0 +1,9 @@
+{
+	"type": "classic",
+	"name": "O mně",
+	"description": "Ahoj, jmenuji se Honzapkcz a jsem vývojář této hry!
+	Tato hra byla vytvořena jako projekt do zeměpisu.",
+	"difficulty": 0,
+	"rounds": 0,
+	"thumbnail": "res://Games/Test/honzapkcz.png",
+}
