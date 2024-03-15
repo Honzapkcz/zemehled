@@ -232,6 +232,7 @@ text = "Hrát"
 [node name="Image" type="TextureRect" parent="Play/Borders/GridContainer/Content"]
 layout_mode = 2
 size_flags_vertical = 3
+expand_mode = 1
 
 [node name="Header" type="MarginContainer" parent="Play"]
 layout_mode = 1
