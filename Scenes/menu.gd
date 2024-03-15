@@ -27,8 +27,8 @@ func _physics_process(delta):
 		return
 	rot += Vector3(randf_range(0.0, rot_speed), randf_range(0.0, rot_speed), randf_range(0.0, rot_speed))
 	var tween: Tween = get_tree().create_tween()
-	tween.tween_property(person, "rotation", rot, 0.16)
-	tween.parallel().tween_property(planet, "rotation:y", 0.05, 0.16).as_relative()
+	tween.tween_property(person, "rotation", rot, delta * 9)
+	tween.parallel().tween_property(planet, "rotation:y", 0.05, delta * 9).as_relative()
 	
 	if Engine.get_physics_frames() % 20 != 0:
 		return
