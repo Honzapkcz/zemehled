@@ -20,7 +20,7 @@ func on_menu_selected(index: int):
 			playing = false
 
 func mainloop():
-	while true:
+	while playing:
 		question += 1
 		if question >= Global.game.rounds:
 			break
@@ -34,7 +34,7 @@ func mainloop():
 			time_left -= 1
 			if not playing:
 				break
-		await get_tree().create_tween().tween_property($Image, "position:x", get_viewport_rect().size.x, 1.0).finished
+		await get_tree().create_tween().tween_property($Image, "position:x", get_viewport_rect().size.x + 10, 1.0).finished
 		# (649, 0) <- (1152, 0)
 	end()
 
