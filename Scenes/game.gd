@@ -8,6 +8,7 @@ var playing: bool = true
 func _ready():
 	$Status/Menu.get_popup().index_pressed.connect(on_menu_selected)
 	$Image.position.x = get_viewport_rect().size.x
+	$Margin/Map/View/Map.load_map(Global.game.map)
 	mainloop()
 
 func on_menu_selected(index: int):
