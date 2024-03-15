@@ -26,13 +26,14 @@ class ZemeGame:
 		
 	
 	func load(data: Dictionary):
-		print(data)
 		if not data.has("type") or data["type"] != "classic":
 			return
 		for i in self.get_property_list():
+			print(i)
 			if not data.has(i.name):
-				return
-			self[i.name] = data[i]
+				continue
+			self[i.name] = data[i.name]
+
 
 func load_all() -> Array[ZemeGame]:
 	var games: Array[ZemeGame]
