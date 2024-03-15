@@ -32,11 +32,17 @@ class ZemeGame:
 			print(i)
 			if not data.has(i.name):
 				continue
+			if i.name == "positions" and data.has("positions"):
+				for j in data.positions:
+					positions.append(Vector2(j[0], j[1]))
+				continue
+			elif i.name == "images" and data.has("images"):
+				images.append_array(PackedStringArray(data.images))
 			self[i.name] = data[i.name]
 
 
 func load_all() -> Array[ZemeGame]:
-	var games: Array[ZemeGame]
+	var games: Array[ZemeGame] = []
 	for i in DirAccess.get_directories_at("res://Games"):
 		var d: = DirAccess.open("res://Games/" + i)
 		if not d.file_exists("game.json"):
