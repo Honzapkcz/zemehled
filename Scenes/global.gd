@@ -1,18 +1,24 @@
 extends Node
+class_name GlobalScene
 
 class ZemeGame:
 	var name: String
 	var description: String
 	var rounds: int
 	var difficulty: int
-	var image: String
-	var map_image: String
+	var thumbnail: String
+	var map: String
 	var images: PackedStringArray
 	var positions: PackedVector2Array
 	
-	func load(data):
-		pass
-		
+	func load(data: Dictionary):
+		if not data.has("type") or data["type"] != "classic":
+			return
+		for i in self.get_property_list():
+			if not data.has(i):
+				return
+			self[i.name] = data[i]
+			
 
 func load_all() -> Array[ZemeGame]:
 	var games: Array[ZemeGame]
