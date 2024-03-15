@@ -1,6 +1,9 @@
 extends Node
 class_name GlobalScene
 
+var sfx_volume: int
+var music_volume: int
+
 class ZemeGame:
 	var name: String
 	var description: String
@@ -27,7 +30,7 @@ class ZemeGame:
 		if not data.has("type") or data["type"] != "classic":
 			return
 		for i in self.get_property_list():
-			if not data.has(i):
+			if not data.has(i.name):
 				return
 			self[i.name] = data[i]
 
