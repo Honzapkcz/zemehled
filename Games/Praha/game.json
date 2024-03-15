@@ -2,5 +2,18 @@
 	"type": "classic",
 	"name": "Hrát",
 	"description": "Hrát hru.",
-	"thumbnail": "res://Games/Praha/map-of-czech-republic.png"
+	"difficulty": 5,
+	"rounds": 3,
+	"thumbnail": "res://Games/Praha/map-of-czech-republic.png",
+	"map": "res://Games/Praha/map-of-czech-republic.png",
+	"images": [
+		"res://Games/Praha/map-of-czech-republic.png",
+		"res://Games/Praha/map-of-czech-republic.png",
+		"res://Games/Praha/map-of-czech-republic.png"
+	],
+	"positions": [
+		[500, 250],
+		[25, 50],
+		[200, 500]
+	]
 }
