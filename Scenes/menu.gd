@@ -76,7 +76,22 @@ func _on_play_close_pressed():
 
 
 func _on_play_game_pressed():
-	pass # Replace with function body.
+	if list.get_selected_items().is_empty():
+		return
+	elif gamez[list.get_selected_items()[0]].rounds < 1:
+		return
+	Global.game = gamez[list.get_selected_items()[0]]
+	Global.answer_time = minutes.value * 60 + seconds.value
+	$Effect.play()
+	var tween: Tween = get_tree().create_tween()
+	tween.tween_property($Play, "position:y", 648, 1.0)
+	tween.parallel().tween_property($Menu, "scale", Vector2(0.0, 0.0), 1.0).set_delay(0.5)
+	tween.parallel().tween_property($TextureRect, "modulate:a", 0.0, 1.0).set_delay(1.0)
+	tween.parallel().tween_property(person, "scale", Vector3(0.0, 0.0, 0.0), 1.0).set_delay(1.0)
+	tween.parallel().tween_property(planet, "scale", Vector3(0.0, 0.0, 0.0), 1.0).set_delay(1.5)
+	await get_tree().create_timer(3.0).timeout
+	get_tree().change_scene_to_file("res://Scenes/game.tscn")
+	#TODO: push volumes
 
 
 func _on_list_item_selected(index: int):
