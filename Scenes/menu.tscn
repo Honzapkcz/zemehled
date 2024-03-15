@@ -75,11 +75,16 @@ material = SubResource("ORMMaterial3D_vbovb")
 
 [node name="Menu" type="CenterContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = -600.0
+offset_top = -331.0
+grow_horizontal = 0
+grow_vertical = 0
+use_top_left = true
 
 [node name="Layout" type="VBoxContainer" parent="Menu"]
 layout_mode = 2
@@ -88,6 +93,8 @@ alignment = 1
 [node name="Label" type="Label" parent="Menu/Layout"]
 custom_minimum_size = Vector2(600, 0)
 layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 5
 theme_override_font_sizes/font_size = 150
 text = "Zeměhleď"
 label_settings = SubResource("LabelSettings_gyvxe")
@@ -95,16 +102,22 @@ horizontal_alignment = 3
 
 [node name="Play" type="Button" parent="Menu/Layout"]
 layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 5
 theme_override_font_sizes/font_size = 50
 text = "Hrát"
 
 [node name="Settings" type="Button" parent="Menu/Layout"]
 layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 5
 theme_override_font_sizes/font_size = 50
 text = "Nastavení"
 
 [node name="Exit" type="Button" parent="Menu/Layout"]
 layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 5
 theme_override_font_sizes/font_size = 50
 text = "Odejít"
 
