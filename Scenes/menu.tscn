@@ -220,8 +220,6 @@ text = "Hrát"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-item_count = 1
-item_0/text = "Hrát"
 
 [node name="Content" type="VBoxContainer" parent="Play/Borders/GridContainer"]
 layout_mode = 2
