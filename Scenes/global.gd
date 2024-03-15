@@ -3,6 +3,8 @@ class_name GlobalScene
 
 var sfx_volume: int
 var music_volume: int
+var answer_time: int
+var game: ZemeGame
 
 class ZemeGame:
 	var name: String
