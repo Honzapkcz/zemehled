@@ -26,7 +26,7 @@ func load_all() -> Array[ZemeGame]:
 		var d: = DirAccess.open("res://Games/" + i)
 		if not d.file_exists("game.json"):
 			continue
-		var file: FileAccess = FileAccess.open("res://Games/" + i, FileAccess.READ)
+		var file: FileAccess = FileAccess.open("res://Games/" + i + "/game.json", FileAccess.READ)
 		var data = JSON.parse_string(file.get_as_text())
 		file.close()
 		if typeof(data) == TYPE_DICTIONARY:
@@ -35,6 +35,6 @@ func load_all() -> Array[ZemeGame]:
 			continue
 		for j in data:
 			var z: = ZemeGame.new()
-			z.load(data)
+			z.load(j)
 			games.append(z)
 	return games
