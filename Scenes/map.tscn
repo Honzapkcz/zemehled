@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://b40c0bueskaub"]
+[gd_scene load_steps=2 format=3 uid="uid://b40c0bueskaub"]
+
+[ext_resource type="Script" path="res://Scenes/map.gd" id="1_ocr7e"]
 
 [node name="Map" type="Node2D"]
+script = ExtResource("1_ocr7e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
