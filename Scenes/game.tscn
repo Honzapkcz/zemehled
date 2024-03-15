@@ -97,10 +97,18 @@ popup/item_2/id = 1
 
 [node name="Round" type="LineEdit" parent="Status"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_styles/read_only = ExtResource("1_iaj65")
 text = "99/99"
+editable = false
 expand_to_text_length = true
 
 [node name="Time" type="LineEdit" parent="Status"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_styles/read_only = ExtResource("1_iaj65")
 text = "59:59"
+editable = false
 expand_to_text_length = true
