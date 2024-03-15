@@ -1,5 +1,6 @@
 {
 	"type": "classic",
 	"name": "Hrát",
-	"description": "Hrát hru."
+	"description": "Hrát hru.",
+	"thumbnail": "res://Games/Praha/map-of-czech-republic.png"
 }
