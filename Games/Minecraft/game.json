@@ -1,0 +1,25 @@
+{
+	"type": "classic",
+	"name": "Minecraft Test",
+	"description": "Hrát hru. Minecraft test mapy a obrázků.",
+	"difficulty": 3,
+	"rounds": 6,
+	"thumbnail": "res://Games/Minecraft/light_blue_concrete.png",
+	"map": "res://Games/Minecraft/blue_concrete.png",
+	"images": [
+		"res://Games/Minecraft/blue_concrete.png",
+		"res://Games/Minecraft/red_concrete.png",
+		"res://Games/Minecraft/light_blue_concrete.png",
+		"res://Games/Minecraft/magenta_concrete.png",
+		"res://Games/Minecraft/orange_concrete.png",
+		"res://Games/Minecraft/green_concrete.png",
+	],
+	"positions": [
+		[500, 250],
+		[25, 50],
+		[200, 500],
+		[0, 0],
+		[0, 0],
+		[0, 0]
+	]
+}
