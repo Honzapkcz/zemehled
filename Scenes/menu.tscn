@@ -229,6 +229,7 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "Hrát"
 autowrap_mode = 3
+clip_text = true
 
 [node name="Image" type="TextureRect" parent="Play/Borders/GridContainer/Content"]
 layout_mode = 2
