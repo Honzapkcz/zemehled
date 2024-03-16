@@ -10,7 +10,10 @@ func get_point() -> Vector2:
 
 func _input(event):
 	if event is InputEventMouseButton:
-		
+		if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+			$Sprite2D.scale /= 1.2
+		elif event.button_index == MOUSE_BUTTON_WHEEL_UP:
+			$Sprite2D.scale *= 1.2
 		drag_active = event.pressed
 	elif event is InputEventMouseMotion:
 		if not drag_active:
