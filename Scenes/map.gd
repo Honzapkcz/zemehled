@@ -1,25 +1,35 @@
 extends Node2D
 
 var drag_active: bool
+var click_delta: float
 
 func load_map(path: String):
-	$Sprite2D.texture = load(path)
+	$Map/Sprite2D.texture = load(path)
 
 func get_point() -> Vector2:
-	return Vector2.ZERO
+	return $Map/Point.position
 
 func clear_point():
-	pass
+	$Map/Point.visible = false
 
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
-			$Sprite2D.scale /= 1.2
+			$Map.scale /= 1.2
+			return
 		elif event.button_index == MOUSE_BUTTON_WHEEL_UP:
-			$Sprite2D.scale *= 1.2
+			$Map.scale *= 1.2
+			return
 		drag_active = event.pressed
+		if event.pressed:
+			click_delta = 0
+			return
+		if click_delta < 1:
+			$Map/Point.global_position = event.position
+			$Map/Point.visible = true
 	elif event is InputEventMouseMotion:
 		if not drag_active:
 			return
-		$Sprite2D.position += event.relative
+		click_delta += event.relative.x + event.relative.y
+		$Map.position += event.relative
 	

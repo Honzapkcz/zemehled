@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://b40c0bueskaub"]
+[gd_scene load_steps=3 format=3 uid="uid://b40c0bueskaub"]
 
 [ext_resource type="Script" path="res://Scenes/map.gd" id="1_ocr7e"]
+[ext_resource type="Texture2D" uid="uid://b6ai26o5abbs7" path="res://Assets/Cursors/point.png" id="2_fo2pd"]
 
 [node name="Map" type="Node2D"]
 script = ExtResource("1_ocr7e")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Map" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Map"]
+
+[node name="Point" type="Sprite2D" parent="Map"]
+texture = ExtResource("2_fo2pd")
+offset = Vector2(6, -6)
+flip_v = true
