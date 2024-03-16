@@ -8,6 +8,9 @@ func load_map(path: String):
 func get_point() -> Vector2:
 	return Vector2.ZERO
 
+func clear_point():
+	pass
+
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
