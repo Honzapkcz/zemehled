@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dshdwd2oxu8lj"]
+[gd_scene load_steps=5 format=3 uid="uid://dshdwd2oxu8lj"]
 
 [ext_resource type="StyleBox" uid="uid://duyam4758ulao" path="res://Assets/Styles/General/Box.tres" id="1_iaj65"]
 [ext_resource type="Script" path="res://Scenes/game.gd" id="1_tv7un"]
 [ext_resource type="PackedScene" uid="uid://b40c0bueskaub" path="res://Scenes/map.tscn" id="3_yhxoe"]
-[ext_resource type="StyleBox" uid="uid://yivtfpayypbe" path="res://Assets/Styles/Window/ToolWindow.tres" id="4_xpcec"]
-[ext_resource type="Texture2D" uid="uid://cg0koet6pa2ip" path="res://Assets/Styles/Window/CloseBtn.png" id="5_c88h7"]
+[ext_resource type="PackedScene" uid="uid://bdtkc2y5x70v3" path="res://Scenes/settings.tscn" id="4_qwmq3"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -120,76 +119,16 @@ text = "59:59"
 editable = false
 expand_to_text_length = true
 
-[node name="Settings" type="Panel" parent="."]
-custom_minimum_size = Vector2(800, 500)
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 576.0
-offset_top = -508.0
-offset_right = 1376.0
-offset_bottom = -8.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_styles/panel = ExtResource("4_xpcec")
-
-[node name="Borders" type="MarginContainer" parent="Settings"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 4
-theme_override_constants/margin_top = 22
-theme_override_constants/margin_right = 4
-theme_override_constants/margin_bottom = 4
-
-[node name="Layout" type="VBoxContainer" parent="Settings/Borders"]
-layout_mode = 2
-
-[node name="Button" type="Button" parent="Settings/Borders/Layout"]
-layout_mode = 2
-text = "Tlačítko"
-
-[node name="Label2" type="Label" parent="Settings/Borders/Layout"]
-layout_mode = 2
-text = "Hlasitost zvukových efektů"
-
-[node name="EffectVolume" type="HSlider" parent="Settings/Borders/Layout"]
-layout_mode = 2
-min_value = -80.0
-max_value = 24.0
-
-[node name="Label" type="Label" parent="Settings/Borders/Layout"]
-layout_mode = 2
-text = "Hlasitost hudby"
-
-[node name="MusicVolume" type="HSlider" parent="Settings/Borders/Layout"]
-layout_mode = 2
-min_value = -80.0
-max_value = 24.0
-
-[node name="Header" type="MarginContainer" parent="Settings"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 19.0
-grow_horizontal = 2
-theme_override_constants/margin_top = 3
-theme_override_constants/margin_right = 2
-
-[node name="Close" type="Button" parent="Settings/Header"]
-layout_mode = 2
-size_flags_horizontal = 8
-icon = ExtResource("5_c88h7")
-flat = true
-
-[node name="Title" type="Label" parent="Settings/Header"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "Nastavení"
+[node name="Settings" parent="." instance=ExtResource("4_qwmq3")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 800.0
+offset_bottom = 500.0
+grow_horizontal = 1
+grow_vertical = 1

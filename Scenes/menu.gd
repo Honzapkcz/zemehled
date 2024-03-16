@@ -50,9 +50,7 @@ func _on_settings_pressed():
 	if pop_open:
 		return
 	pop_open = true
-	$Settings.position.x = get_viewport_rect().size.x
-	$Settings.visible = true
-	get_tree().create_tween().tween_property($Settings, "position:x", 176, 1.0)
+
 	$Effect.play()
 
 
@@ -63,10 +61,6 @@ func _on_exit_pressed():
 func _on_settings_close_pressed():
 	pop_open = false
 	$Effect.play()
-	await get_tree().create_tween().tween_property($Settings, "position:x", get_viewport_rect().size.x, 1.0).finished
-	if pop_open:
-		return
-	$Settings.visible = false
 
 
 func _on_play_close_pressed():
