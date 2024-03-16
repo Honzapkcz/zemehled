@@ -4,6 +4,7 @@ var popup_open: bool
 var question: int = -1
 var time_left: int
 var playing: bool = true
+var position_delta: PackedVector2Array
 
 func _ready():
 	$Status/Menu.get_popup().index_pressed.connect(on_menu_selected)
@@ -35,6 +36,8 @@ func mainloop():
 			time_left -= 1
 			if not playing:
 				break
+		position_delta.append(Global.game.positions[question] - $Margin/Map/View/Map.get_point())
+		$Margin/Map/View/Map.clear_point()
 		await get_tree().create_tween().tween_property($Image, "position:x", get_viewport_rect().size.x + 10, 1.0).finished
 		# (649, 0) <- (1152, 0)
 	end()

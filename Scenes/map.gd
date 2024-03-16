@@ -11,6 +11,7 @@ func get_point() -> Vector2:
 
 func clear_point():
 	$Map/Point.visible = false
+	$Map/Point.position = Vector2(0, 0)
 
 func _input(event):
 	if event is InputEventMouseButton:

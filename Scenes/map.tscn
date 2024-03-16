@@ -9,6 +9,7 @@ script = ExtResource("1_ocr7e")
 [node name="Map" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Map"]
+centered = false
 
 [node name="Point" type="Sprite2D" parent="Map"]
 texture = ExtResource("2_fo2pd")
