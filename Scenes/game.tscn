@@ -24,9 +24,6 @@ grow_vertical = 2
 size_flags_vertical = 3
 theme_override_styles/panel = ExtResource("1_iaj65")
 
-[node name="Settings" parent="." instance=ExtResource("4_qwmq3")]
-layout_mode = 1
-
 [node name="Margin" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -83,6 +80,14 @@ theme_override_constants/margin_bottom = 3
 [node name="Texture" type="TextureRect" parent="Image/Image/Border"]
 layout_mode = 2
 expand_mode = 1
+
+[node name="Settings" parent="." instance=ExtResource("4_qwmq3")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+grow_vertical = 0
 
 [node name="Status" type="HBoxContainer" parent="."]
 layout_mode = 0
