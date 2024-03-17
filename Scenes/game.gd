@@ -17,7 +17,7 @@ func on_menu_selected(index: int):
 		0: #Skip
 			time_left = 0
 		1: #Settings
-			pass
+			$Settings.open_menu()
 		2: #Leave
 			playing = false
 
@@ -46,8 +46,8 @@ func end():
 	popup_open = true
 	var tween: Tween = get_tree().create_tween()
 	tween.tween_property($Status, "position:x", -120, 1.0)
-	tween.parallel().tween_property($Image, "position:x", get_viewport_rect().size.x, 1.0).set_delay(0.5)
-	tween.parallel().tween_property($Margin, "scale", Vector2(0.0, 0.0), 1.0).set_delay(1.0)
-	tween.parallel().tween_property($Border, "modulate:a", 0.0, 1.0).set_delay(1.5)
-	await get_tree().create_timer(3.0).timeout
+	tween.parallel().tween_property($Image, "position:x", get_viewport_rect().size.x, 1.0).set_delay(0.25)
+	tween.parallel().tween_property($Margin, "scale", Vector2(0.0, 0.0), 1.0).set_delay(0.5)
+	tween.parallel().tween_property($Border, "modulate:a", 0.0, 1.0).set_delay(0.75)
+	await get_tree().create_timer(1.5).timeout
 	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
