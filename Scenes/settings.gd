@@ -8,8 +8,8 @@ func _ready():
 	$Settings.visible = false
 
 func open_menu():
-	#if not is_open:
-	#	is_open = true
+	if not is_open:
+		is_open = true
 	$Settings.position.x = get_viewport_rect().size.x
 	$Settings.visible = true
 	get_tree().create_tween().tween_property($Settings, "position:x", 176, 1.0)
