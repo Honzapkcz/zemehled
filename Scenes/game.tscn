@@ -24,6 +24,9 @@ grow_vertical = 2
 size_flags_vertical = 3
 theme_override_styles/panel = ExtResource("1_iaj65")
 
+[node name="Settings" parent="." instance=ExtResource("4_qwmq3")]
+layout_mode = 1
+
 [node name="Margin" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -118,17 +121,3 @@ theme_override_styles/read_only = ExtResource("1_iaj65")
 text = "59:59"
 editable = false
 expand_to_text_length = true
-
-[node name="Settings" parent="." instance=ExtResource("4_qwmq3")]
-layout_mode = 0
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 800.0
-offset_bottom = 500.0
-grow_horizontal = 1
-grow_vertical = 1
