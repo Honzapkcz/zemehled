@@ -1,0 +1,19 @@
+{
+	"attribution": "<a href=\"https://api.mapy.cz/copyright\" target=\"_blank\">&copy; Seznam.cz a.s. a další</a>",
+	"tilejson": "3.0.0",
+	"name": "basic",
+	"minzoom": 0,
+	"maxzoom": 19,
+	"bounds": [
+		-180,
+		-85.0511,
+		180,
+		85.0511
+	],
+	"format": "png",
+	"tiles": [
+		"https://api.mapy.cz/v1/maptiles/basic/256/{z}/{x}/{y}?apikey=yeJ_tH15Ism_YfuC_K1NG_k5yIdArE_Y0uTo5Teal1T"
+	],
+	"logo": "https://api.mapy.cz/img/api/logo.svg",
+	"!Praha": "{z:9}/{x:276}/{y:173} # Closest I can get in one tile"
+}
