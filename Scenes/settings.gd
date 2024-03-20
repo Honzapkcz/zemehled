@@ -10,9 +10,11 @@ func open_menu():
 		is_open = true
 	$Settings.position.x = get_viewport_rect().size.x
 	$Settings.visible = true
+	$AudioStreamPlayer.play()
 	get_tree().create_tween().tween_property($Settings, "position:x", 176, 1.0)
 
 func close_menu():
+	$AudioStreamPlayer.play()
 	await get_tree().create_tween().tween_property($Settings, "position:x", get_viewport_rect().size.x, 1.0).finished
 	if is_open:
 		return
@@ -23,8 +25,8 @@ func on_settings_changed():
 
 func _on_effect_volume_value_changed(value: int):
 	Global.sfx_volume = value
-	Global.settigs_changed.emit()
+	Global.settings_changed.emit()
 
 func _on_music_volume_value_changed(value: int):
 	Global.music_volume = value
-	Global.settigs_changed.emit()
+	Global.settings_changed.emit()
