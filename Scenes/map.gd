@@ -2,6 +2,7 @@ extends Node2D
 
 var drag_active: bool
 var click_delta: float
+var offset: Vector2
 
 func load_map(path: String):
 	$Map/Sprite2D.texture = load(path)
@@ -17,11 +18,11 @@ func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 			$Map.scale /= 1.2
-			$Map.position += $Map.scale * 64
+			$Map.position = offset * $Map.scale + get_viewport_rect().size / 2
 			return
 		elif event.button_index == MOUSE_BUTTON_WHEEL_UP:
 			$Map.scale *= 1.2
-			$Map.position -= $Map.scale * 64
+			$Map.position = offset * $Map.scale + get_viewport_rect().size / 2
 			return
 		drag_active = event.pressed
 		if event.pressed:
@@ -34,5 +35,6 @@ func _input(event):
 		if not drag_active:
 			return
 		click_delta += event.relative.x + event.relative.y
-		$Map.position += event.relative
+		offset += event.relative / $Map.scale
+		$Map.position = offset * $Map.scale + get_viewport_rect().size / 2
 	
