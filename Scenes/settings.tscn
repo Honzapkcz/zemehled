@@ -1,8 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdtkc2y5x70v3"]
+[gd_scene load_steps=7 format=3 uid="uid://bdtkc2y5x70v3"]
 
 [ext_resource type="StyleBox" uid="uid://yivtfpayypbe" path="res://Assets/Styles/Window/ToolWindow.tres" id="1_m1lwt"]
 [ext_resource type="Script" path="res://Scenes/settings.gd" id="1_opjot"]
 [ext_resource type="Texture2D" uid="uid://cg0koet6pa2ip" path="res://Assets/Styles/Window/CloseBtn.png" id="2_cie6y"]
+[ext_resource type="AudioStream" uid="uid://5hpclfmlks3n" path="res://Assets/Sounds/move1.ogg" id="4_t5xu0"]
+[ext_resource type="AudioStream" uid="uid://g6acn6voktqu" path="res://Assets/Sounds/move2.ogg" id="5_8t45h"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_4y3b5"]
+playback_mode = 1
+streams_count = 2
+stream_0/stream = ExtResource("4_t5xu0")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("5_8t45h")
+stream_1/weight = 1.0
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -86,6 +96,9 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Nastavení"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_4y3b5")
 
 [connection signal="drag_ended" from="Settings/Borders/Layout/EffectVolume" to="." method="_on_effect_volume_drag_ended"]
 [connection signal="value_changed" from="Settings/Borders/Layout/EffectVolume" to="." method="_on_effect_volume_value_changed"]
