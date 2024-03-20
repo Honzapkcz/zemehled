@@ -1,7 +1,5 @@
 extends Control
 
-signal settigs_changed
-
 var is_open: bool
 
 func _ready():
@@ -20,10 +18,13 @@ func close_menu():
 		return
 	$Settings.visible = false
 
+func on_settings_changed():
+	$AudioStreamPlayer.volume_db = Global.sfx_volume
+
 func _on_effect_volume_value_changed(value: int):
 	Global.sfx_volume = value
-	settigs_changed.emit()
+	Global.settigs_changed.emit()
 
 func _on_music_volume_value_changed(value: int):
 	Global.music_volume = value
-	settigs_changed.emit()
+	Global.settigs_changed.emit()

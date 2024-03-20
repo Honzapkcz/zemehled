@@ -1,6 +1,8 @@
 extends Node
 class_name GlobalScene
 
+signal settings_changed
+
 var sfx_volume: int
 var music_volume: int
 var answer_time: int
