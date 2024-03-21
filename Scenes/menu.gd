@@ -17,6 +17,8 @@ var gamez: Array[GlobalScene.ZemeGame]
 
 func _ready():
 	Global.settings_changed.connect(on_settings_changed)
+	$ThemePlayer.volume_db = Global.music_volume
+	$Effect.volume_db = Global.sfx_volume
 	gamez = Global.load_all()
 	for i in gamez:
 		list.add_item(i.name)

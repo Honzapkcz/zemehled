@@ -3,6 +3,7 @@ extends Control
 var is_open: bool
 
 func _ready():
+	$AudioStreamPlayer.volume_db = Global.sfx_volume
 	Global.settings_changed.connect(on_settings_changed)
 	$Settings.visible = false
 
