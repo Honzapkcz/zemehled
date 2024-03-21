@@ -18,10 +18,12 @@ func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 			$Map.scale /= 1.2
+			$Map/Point.scale *= 1.2
 			$Map.position = offset * $Map.scale + get_viewport_rect().size / 2
 			return
 		elif event.button_index == MOUSE_BUTTON_WHEEL_UP:
 			$Map.scale *= 1.2
+			$Map/Point.scale /= 1.2
 			$Map.position = offset * $Map.scale + get_viewport_rect().size / 2
 			return
 		drag_active = event.pressed
