@@ -103,3 +103,4 @@ stream = SubResource("AudioStreamRandomizer_4y3b5")
 [connection signal="drag_ended" from="Settings/Borders/Layout/EffectVolume" to="." method="_on_effect_volume_drag_ended"]
 [connection signal="value_changed" from="Settings/Borders/Layout/EffectVolume" to="." method="_on_effect_volume_value_changed"]
 [connection signal="value_changed" from="Settings/Borders/Layout/MusicVolume" to="." method="_on_music_volume_value_changed"]
+[connection signal="pressed" from="Settings/Header/Close" to="." method="close_menu"]

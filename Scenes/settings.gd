@@ -3,6 +3,7 @@ extends Control
 var is_open: bool
 
 func _ready():
+	Global.settings_changed.connect(on_settings_changed)
 	$Settings.visible = false
 
 func open_menu():

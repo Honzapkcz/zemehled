@@ -16,7 +16,7 @@ var pop_open: bool
 var gamez: Array[GlobalScene.ZemeGame]
 
 func _ready():
-	Global.settings_changed.emit(on_settings_changed)
+	Global.settings_changed.connect(on_settings_changed)
 	gamez = Global.load_all()
 	for i in gamez:
 		list.add_item(i.name)
@@ -43,16 +43,12 @@ func on_settings_changed():
 	$Effect.volume_db = Global.sfx_volume
 
 func _on_play_pressed():
-	if pop_open:
-		return
 	pop_open = true
 	get_tree().create_tween().tween_property($Play, "position:y", 140, 1.0)
 	$Effect.play()
 
 
 func _on_settings_pressed():
-	if pop_open:
-		return
 	pop_open = true
 	$Settings.open_menu()
 	$Effect.play()
