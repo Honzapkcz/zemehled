@@ -13,6 +13,6 @@ Goofy retro clone of Geogesser.
 - [X] Image presentation
 - [X] Map & point selection
 - [ ] Score system
-- [ ] In-Game settings menu
+- [X] In-Game settings menu
 - [ ] Easy Map manipulation
 - [ ] MORE!! animations
