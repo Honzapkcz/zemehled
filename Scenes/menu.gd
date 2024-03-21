@@ -54,17 +54,12 @@ func _on_settings_pressed():
 	if pop_open:
 		return
 	pop_open = true
-
+	$Settings.open_menu()
 	$Effect.play()
 
 
 func _on_exit_pressed():
 	get_tree().quit()
-
-
-func _on_settings_close_pressed():
-	pop_open = false
-	$Effect.play()
 
 
 func _on_play_close_pressed():

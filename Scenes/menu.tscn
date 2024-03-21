@@ -124,6 +124,11 @@ text = "Odejít"
 
 [node name="Settings" parent="." instance=ExtResource("4_dqybx")]
 layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+grow_horizontal = 1
+grow_vertical = 0
 
 [node name="Play" type="Panel" parent="."]
 custom_minimum_size = Vector2(800, 500)
