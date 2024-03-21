@@ -43,7 +43,7 @@ stretch = true
 [node name="View" type="SubViewport" parent="Margin/Map"]
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
-size = Vector2i(2, 2)
+size = Vector2i(1146, 642)
 render_target_update_mode = 4
 
 [node name="Map" parent="Margin/Map/View" instance=ExtResource("3_yhxoe")]
@@ -83,10 +83,10 @@ expand_mode = 1
 
 [node name="Settings" parent="." instance=ExtResource("4_qwmq3")]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 2
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 0.0
+grow_horizontal = 1
 grow_vertical = 0
 
 [node name="Status" type="HBoxContainer" parent="."]
