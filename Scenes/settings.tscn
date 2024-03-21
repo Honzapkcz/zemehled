@@ -14,7 +14,7 @@ stream_0/weight = 1.0
 stream_1/stream = ExtResource("5_8t45h")
 stream_1/weight = 1.0
 
-[node name="Control" type="Control"]
+[node name="Settings" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
