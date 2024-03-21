@@ -31,6 +31,7 @@ func on_menu_selected(index: int):
 func mainloop():
 	await get_tree().create_timer(4.0).timeout
 	$MoveEffect.play()
+	$ThemePlayer.play()
 	while playing:
 		question += 1
 		if question >= Global.game.rounds:

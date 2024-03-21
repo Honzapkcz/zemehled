@@ -139,4 +139,3 @@ autoplay = true
 
 [node name="ThemePlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_w3h60")
-autoplay = true
