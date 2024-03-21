@@ -3,6 +3,8 @@ extends Control
 var is_open: bool
 
 func _ready():
+	$Settings/Borders/Layout/EffectVolume.value = Global.sfx_volume
+	$Settings/Borders/Layout/MusicVolume.value = Global.music_volume
 	$AudioStreamPlayer.volume_db = Global.sfx_volume
 	Global.settings_changed.connect(on_settings_changed)
 	$Settings.visible = false
