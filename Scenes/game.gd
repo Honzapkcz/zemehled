@@ -10,7 +10,14 @@ func _ready():
 	$Status/Menu.get_popup().index_pressed.connect(on_menu_selected)
 	$Image.position.x = get_viewport_rect().size.x
 	$Margin/Map/View/Map.load_map(Global.game.map)
+	Global.settings_changed.connect(on_settings_changed)
+	on_settings_changed()
 	mainloop()
+
+func on_settings_changed():
+	$ThemePlayer.volume_db = Global.music_volume
+	$MoveEffect.volume_db = Global.sfx_volume
+	$StartEffect.volume_db = Global.sfx_volume
 
 func on_menu_selected(index: int):
 	match index:
@@ -22,6 +29,8 @@ func on_menu_selected(index: int):
 			playing = false
 
 func mainloop():
+	await get_tree().create_timer(4.0).timeout
+	$MoveEffect.play()
 	while playing:
 		question += 1
 		if question >= Global.game.rounds:
@@ -38,6 +47,7 @@ func mainloop():
 				break
 		position_delta.append(Global.game.positions[question] - $Margin/Map/View/Map.get_point())
 		$Margin/Map/View/Map.clear_point()
+		$MoveEffect.play()
 		await get_tree().create_tween().tween_property($Image, "position:x", get_viewport_rect().size.x + 10, 1.0).finished
 		# (649, 0) <- (1152, 0)
 	end()

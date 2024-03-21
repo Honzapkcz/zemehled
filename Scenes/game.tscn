@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dshdwd2oxu8lj"]
+[gd_scene load_steps=7 format=3 uid="uid://dshdwd2oxu8lj"]
 
 [ext_resource type="StyleBox" uid="uid://duyam4758ulao" path="res://Assets/Styles/General/Box.tres" id="1_iaj65"]
 [ext_resource type="Script" path="res://Scenes/game.gd" id="1_tv7un"]
 [ext_resource type="PackedScene" uid="uid://b40c0bueskaub" path="res://Scenes/map.tscn" id="3_yhxoe"]
 [ext_resource type="PackedScene" uid="uid://bdtkc2y5x70v3" path="res://Scenes/settings.tscn" id="4_qwmq3"]
+[ext_resource type="AudioStream" uid="uid://dy3wlm01a8ll5" path="res://Assets/Sounds/movelong.ogg" id="5_1m8as"]
+[ext_resource type="AudioStream" uid="uid://buoy88j1dijoa" path="res://Assets/Sounds/start.mp3" id="6_r47nx"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -126,3 +128,14 @@ theme_override_styles/read_only = ExtResource("1_iaj65")
 text = "59:59"
 editable = false
 expand_to_text_length = true
+
+[node name="MoveEffect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_1m8as")
+
+[node name="StartEffect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_r47nx")
+autoplay = true
+
+[node name="ThemePlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_r47nx")
+autoplay = true
