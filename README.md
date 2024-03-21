@@ -14,5 +14,5 @@ Goofy retro clone of Geogesser.
 - [X] Map & point selection
 - [ ] Score system
 - [X] In-Game settings menu
-- [ ] Easy Map manipulation
+- [X] Easy Map manipulation
 - [ ] MORE!! animations
