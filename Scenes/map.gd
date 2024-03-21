@@ -14,6 +14,10 @@ func clear_point():
 	$Map/Point.visible = false
 	$Map/Point.position = Vector2(0, 0)
 
+func center_map():
+	offset = $Map/Sprite2D.get_rect().size / 2
+	$Map.position = offset * $Map.scale + get_viewport_rect().size / 2
+
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
