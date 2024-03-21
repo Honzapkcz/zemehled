@@ -5,7 +5,7 @@
 	"difficulty": 5,
 	"rounds": 3,
 	"thumbnail": "res://Games/Praha/map-of-czech-republic.png",
-	"map": "res://Games/Praha/map-of-czech-republic.png",
+	"map": "res://Games/Praha/4096-v2.png",
 	"images": [
 		"res://Games/Praha/map-of-czech-republic.png",
 		"res://Games/Praha/map-of-czech-republic.png",
