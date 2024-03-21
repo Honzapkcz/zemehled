@@ -16,6 +16,7 @@ var pop_open: bool
 var gamez: Array[GlobalScene.ZemeGame]
 
 func _ready():
+	Global.settings_changed.emit(on_settings_changed)
 	gamez = Global.load_all()
 	for i in gamez:
 		list.add_item(i.name)
@@ -37,6 +38,9 @@ func _physics_process(delta):
 		lbl = 0
 	label.text = "zeměhleď".substr(0, lbl) + "zeměhleď"[lbl].to_upper() + "zeměhleď".substr(lbl + 1)
 
+func on_settings_changed():
+	$ThemePlayer.volume_db = Global.music_volume
+	$Effect.volume_db = Global.sfx_volume
 
 func _on_play_pressed():
 	if pop_open:
