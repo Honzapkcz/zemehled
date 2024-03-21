@@ -21,11 +21,13 @@ func on_settings_changed():
 
 func on_menu_selected(index: int):
 	match index:
-		0: #Skip
+		0: # Skip
 			time_left = 0
-		1: #Settings
+		1: # Center
+			$Margin/Map/View/Map.center_map()
+		2: # Settings
 			$Settings.open_menu()
-		2: #Leave
+		3: # Leave
 			playing = false
 
 func mainloop():

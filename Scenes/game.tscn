@@ -104,13 +104,15 @@ theme_override_constants/separation = 0
 layout_mode = 2
 text = "Menu"
 flat = false
-item_count = 3
+item_count = 4
 popup/item_0/text = "Přeskočit"
 popup/item_0/id = 2
-popup/item_1/text = "Nastavení"
-popup/item_1/id = 0
-popup/item_2/text = "Odejít"
-popup/item_2/id = 1
+popup/item_1/text = "Vycentrovat"
+popup/item_1/id = 3
+popup/item_2/text = "Nastavení"
+popup/item_2/id = 0
+popup/item_3/text = "Odejít"
+popup/item_3/id = 1
 
 [node name="Round" type="LineEdit" parent="Status"]
 layout_mode = 2
