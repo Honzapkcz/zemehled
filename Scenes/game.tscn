@@ -47,10 +47,28 @@ stretch = true
 [node name="View" type="SubViewport" parent="Margin/Map"]
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
-size = Vector2i(2, 2)
+size = Vector2i(1146, 642)
 render_target_update_mode = 4
 
 [node name="Map" parent="Margin/Map/View" instance=ExtResource("3_yhxoe")]
+
+[node name="Submit" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -13.5
+offset_top = -71.0
+offset_right = 13.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 50
+
+[node name="Button" type="Button" parent="Submit"]
+layout_mode = 2
+text = " OK "
 
 [node name="Image" type="MarginContainer" parent="."]
 layout_mode = 1

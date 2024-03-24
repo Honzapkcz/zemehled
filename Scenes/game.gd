@@ -52,7 +52,7 @@ func mainloop():
 		position_delta.append(Global.game.positions[question] - $Margin/Map/View/Map.get_point())
 		$Margin/Map/View/Map.show_location(Global.game.positions[question])
 		$DropEffect.play()
-		await get_tree().create_timer(2.5).timeout
+		await $Submit/Button.pressed
 		$Margin/Map/View/Map.clear_point()
 		$MoveEffect.play()
 		await get_tree().create_tween().tween_property($Image, "position:x", get_viewport_rect().size.x + 10, 1.0).finished
