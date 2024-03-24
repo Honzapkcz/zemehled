@@ -34,3 +34,9 @@ func _on_effect_volume_value_changed(value: int):
 func _on_music_volume_value_changed(value: int):
 	Global.music_volume = value
 	Global.settings_changed.emit()
+
+func _on_reset_pressed():
+	Global.music_volume = 0
+	Global.sfx_volume = 0
+	$Settings/Borders/Layout/EffectVolume.value = 0
+	$Settings/Borders/Layout/MusicVolume.value = 0
