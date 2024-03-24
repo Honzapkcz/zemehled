@@ -16,6 +16,7 @@ var pop_open: bool
 var gamez: Array[GlobalScene.ZemeGame]
 
 func _ready():
+	Input.set_custom_mouse_cursor(preload("res://Assets/Cursors/beam.png"), Input.CURSOR_IBEAM, Vector2(10, 10))
 	Global.settings_changed.connect(on_settings_changed)
 	$ThemePlayer.volume_db = Global.music_volume
 	$Effect.volume_db = Global.sfx_volume
