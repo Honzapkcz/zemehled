@@ -39,7 +39,7 @@ func _input(event):
 		if event.pressed:
 			click_delta = 0
 			return
-		if click_delta < 1:
+		if click_delta < 0.1:
 			$Map/Point.global_position = event.position
 			$Map/Point.visible = true
 	elif event is InputEventMouseMotion:
