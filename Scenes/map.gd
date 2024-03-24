@@ -4,6 +4,9 @@ var drag_active: bool
 var click_delta: float
 var offset: Vector2
 
+func _ready():
+	$Map/Point2.visible = false
+
 func load_map(path: String):
 	$Map/Sprite2D.texture = load(path)
 
