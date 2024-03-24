@@ -18,7 +18,7 @@ func on_settings_changed():
 	$ThemePlayer.volume_db = Global.music_volume
 	$MoveEffect.volume_db = Global.sfx_volume
 	$StartEffect.volume_db = Global.sfx_volume
-	$DropEffect.volumer_db = Global.sfx_volume
+	$DropEffect.volume_db = Global.sfx_volume
 
 func on_menu_selected(index: int):
 	match index:
