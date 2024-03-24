@@ -18,6 +18,7 @@ func on_settings_changed():
 	$ThemePlayer.volume_db = Global.music_volume
 	$MoveEffect.volume_db = Global.sfx_volume
 	$StartEffect.volume_db = Global.sfx_volume
+	$DropEffect.volumer_db = Global.sfx_volume
 
 func on_menu_selected(index: int):
 	match index:
@@ -50,6 +51,7 @@ func mainloop():
 				break
 		position_delta.append(Global.game.positions[question] - $Margin/Map/View/Map.get_point())
 		$Margin/Map/View/Map.show_location(Global.game.positions[question])
+		$DropEffect.play()
 		await get_tree().create_timer(2.5).timeout
 		$Margin/Map/View/Map.clear_point()
 		$MoveEffect.play()
