@@ -2,6 +2,7 @@ extends Node2D
 
 var drag_active: bool
 var click_delta: float
+var can_point: bool = true
 var offset: Vector2
 
 func _ready():
@@ -46,7 +47,7 @@ func _input(event):
 		if event.pressed:
 			click_delta = 0
 			return
-		if click_delta < 0.1 and click_delta > -0.1:
+		if click_delta < 0.1 and click_delta > -0.1 and can_point:
 			$Map/Point.global_position = event.position
 			$Map/Point.visible = true
 	elif event is InputEventMouseMotion:
