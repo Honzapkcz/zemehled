@@ -21,7 +21,7 @@ func clear_point():
 func show_location(location: Vector2):
 	$Map/Point2.position = location
 	$Map/Point2.visible = true
-	offset = location
+	offset = -location
 	$Map.position = offset * $Map.scale + get_viewport_rect().size / 2
 
 func center_map():
