@@ -9,6 +9,7 @@ var answer_time: int
 var game: ZemeGame
 
 class ZemeGame:
+	var type: String
 	var name: String
 	var description: String
 	var rounds: int
