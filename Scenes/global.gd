@@ -30,8 +30,6 @@ class ZemeGame:
 		
 	
 	func load(data: Dictionary):
-		if not data.has("type") or data["type"] != "classic":
-			return
 		for i in self.get_property_list():
 			print(i)
 			if not data.has(i.name):
