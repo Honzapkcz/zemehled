@@ -20,6 +20,7 @@ func _ready():
 		var ord: Array
 		for i in range(Global.game.rounds):
 			ord.append(i)
+		ord.shuffle()
 		order.append_array(PackedInt32Array(ord))
 	on_settings_changed()
 	mainloop()
