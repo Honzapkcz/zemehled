@@ -1,5 +1,5 @@
 {
-	"type": "classic",
+	"type": "classic-random",
 	"name": "Praha",
 	"description": "Vaším úkolem je vytipovat na mapě místo, kde se nachází kulturní památka na obrázku.\nTato hra je na téma pražských kuturních památek.",
 	"difficulty": 8,
