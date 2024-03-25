@@ -6,12 +6,21 @@ var time_left: int
 var playing: bool = true
 var position_delta: PackedVector2Array
 var submit_clicked: bool
+var order: PackedInt32Array
 
 func _ready():
 	$Status/Menu.get_popup().index_pressed.connect(on_menu_selected)
 	$Image.position.x = get_viewport_rect().size.x
 	$Margin/Map/View/Map.load_map(Global.game.map)
 	Global.settings_changed.connect(on_settings_changed)
+	if Global.game.type == "classic":
+		for i in range(Global.game.rounds):
+			order.append(i)
+	elif Global.game.type == "classic-random":
+		var ord: Array
+		for i in range(Global.game.rounds):
+			ord.append(i)
+		order.append_array(PackedInt32Array(ord))
 	on_settings_changed()
 	mainloop()
 
@@ -40,7 +49,7 @@ func mainloop():
 		question += 1
 		if question >= Global.game.rounds:
 			break
-		$Image/Image/Border/Texture.texture = load(Global.game.images[question])
+		$Image/Image/Border/Texture.texture = load(Global.game.images[order[question]])
 		get_tree().create_tween().tween_property($Image, "position:x", 649, 1.0)
 		time_left = Global.answer_time
 		$Status/Round.text = "%02d/%02d" % [question + 1, Global.game.rounds]
@@ -51,8 +60,8 @@ func mainloop():
 			time_left -= 1
 			if not playing or submit_clicked:
 				break
-		position_delta.append(Global.game.positions[question] - $Margin/Map/View/Map.get_point())
-		$Margin/Map/View/Map.show_location(Global.game.positions[question])
+		position_delta.append(Global.game.positions[order[question]] - $Margin/Map/View/Map.get_point())
+		$Margin/Map/View/Map.show_location(Global.game.positions[order[question]])
 		$DropEffect.play()
 		if playing:
 			await $Submit/Button.pressed
