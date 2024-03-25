@@ -5,6 +5,7 @@ var question: int = -1
 var time_left: int
 var playing: bool = true
 var position_delta: PackedVector2Array
+var submit_clicked: bool
 
 func _ready():
 	$Status/Menu.get_popup().index_pressed.connect(on_menu_selected)
@@ -44,10 +45,11 @@ func mainloop():
 		time_left = Global.answer_time
 		$Status/Round.text = "%02d/%02d" % [question + 1, Global.game.rounds]
 		while time_left >= 0:
+			submit_clicked = false
 			$Status/Time.text = "%02d:%02d" % [int(time_left / 60), time_left % 60]
 			await get_tree().create_timer(1.0).timeout
 			time_left -= 1
-			if not playing:
+			if not playing or submit_clicked:
 				break
 		position_delta.append(Global.game.positions[question] - $Margin/Map/View/Map.get_point())
 		$Margin/Map/View/Map.show_location(Global.game.positions[question])
@@ -69,3 +71,7 @@ func end():
 	tween.parallel().tween_property($Border, "modulate:a", 0.0, 1.0).set_delay(0.75)
 	await get_tree().create_timer(1.5).timeout
 	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
+
+
+func _on_button_pressed():
+	pass # Replace with function body.
