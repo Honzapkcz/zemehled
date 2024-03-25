@@ -23,7 +23,7 @@ func show_location(location: Vector2):
 	$Map/Point2.position = location
 	$Map/Point2.visible = true
 	offset = -location
-	$Map.position = offset * $Map.scale + get_viewport_rect().size / 2
+	get_tree().create_tween().tween_property($Map, "position", offset * $Map.scale + get_viewport_rect().size / 2, 1.0)
 
 func center_map():
 	offset = -$Map/Sprite2D.get_rect().size / 2
