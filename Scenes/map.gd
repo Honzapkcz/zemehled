@@ -7,6 +7,8 @@ var offset: Vector2
 
 func _ready():
 	$Map/Point2.visible = false
+	offset = $Map/Sprite2D.get_rect().size / 2
+	$Map.position = offset * $Map.scale + get_viewport_rect().size / 2
 
 func load_map(path: String):
 	$Map/Sprite2D.texture = load(path)
