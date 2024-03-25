@@ -74,4 +74,4 @@ func end():
 
 
 func _on_button_pressed():
-	pass # Replace with function body.
+	submit_clicked = true
