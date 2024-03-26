@@ -66,9 +66,17 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/margin_bottom = 50
 
-[node name="Button" type="Button" parent="Submit"]
+[node name="VBox" type="VBoxContainer" parent="Submit"]
 layout_mode = 2
+
+[node name="Button" type="Button" parent="Submit/VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
 text = " OK "
+
+[node name="Label" type="Label" parent="Submit/VBox"]
+layout_mode = 2
+theme_override_constants/outline_size = 5
 
 [node name="Image" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -164,4 +172,4 @@ autoplay = true
 [node name="ThemePlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_w3h60")
 
-[connection signal="pressed" from="Submit/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Submit/VBox/Button" to="." method="_on_button_pressed"]
