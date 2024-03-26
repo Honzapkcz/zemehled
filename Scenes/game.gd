@@ -64,10 +64,13 @@ func mainloop():
 		position_delta.append(Global.game.positions[order[question]] - $Margin/Map/View/Map.get_point())
 		$Margin/Map/View/Map.show_location(Global.game.positions[order[question]])
 		$DropEffect.play()
-		$Submit/VBox/Label.text = "Rozdíl: " + str(Global.game.positions[order[question]] - $Margin/Map/View/Map.get_point())
+		$Submit/VBox/Label.text = "Rozdíl: " + str(abs(Global.game.positions[order[question]].round().x
+		- $Margin/Map/View/Map.get_point().round().x) + abs(Global.game.positions[order[question]].round().y
+		- $Margin/Map/View/Map.get_point().round().y))
 		if playing:
 			await $Submit/VBox/Button.pressed
 		$Margin/Map/View/Map.clear_point()
+		$Submit/VBox/Label.text = ""
 		$MoveEffect.play()
 		await get_tree().create_tween().tween_property($Image, "position:x", get_viewport_rect().size.x + 10, 1.0).finished
 		# (649, 0) <- (1152, 0)
