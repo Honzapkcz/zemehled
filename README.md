@@ -12,7 +12,7 @@ Goofy retro clone of Geogesser.
 - [X] In-Game goofy sounds
 - [X] Image presentation
 - [X] Map & point selection
-- [ ] Score system
+- [X] Score system
 - [X] In-Game settings menu
 - [X] Easy Map manipulation
-- [ ] MORE!! animations
+- [X] MORE!! animations
