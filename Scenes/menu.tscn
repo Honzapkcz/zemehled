@@ -76,15 +76,13 @@ material = SubResource("ORMMaterial3D_vbovb")
 
 [node name="Menu" type="CenterContainer" parent="."]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -600.0
-offset_top = -331.0
-grow_horizontal = 0
-grow_vertical = 0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
 use_top_left = true
 
 [node name="Layout" type="VBoxContainer" parent="Menu"]
@@ -164,6 +162,10 @@ columns = 2
 [node name="Layout" type="HBoxContainer" parent="Play/Borders/GridContainer"]
 layout_mode = 2
 alignment = 2
+
+[node name="Label" type="Label" parent="Play/Borders/GridContainer/Layout"]
+layout_mode = 2
+text = "Limit na otázku:"
 
 [node name="Minutes" type="SpinBox" parent="Play/Borders/GridContainer/Layout"]
 layout_mode = 2
