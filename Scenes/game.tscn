@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dshdwd2oxu8lj"]
+[gd_scene load_steps=11 format=3 uid="uid://dshdwd2oxu8lj"]
 
 [ext_resource type="StyleBox" uid="uid://duyam4758ulao" path="res://Assets/Styles/General/Box.tres" id="1_iaj65"]
 [ext_resource type="Script" path="res://Scenes/game.gd" id="1_tv7un"]
@@ -8,6 +8,8 @@
 [ext_resource type="AudioStream" uid="uid://cv0psbpkyd514" path="res://Assets/Sounds/falldown.ogg" id="6_n5s14"]
 [ext_resource type="AudioStream" uid="uid://buoy88j1dijoa" path="res://Assets/Sounds/start.mp3" id="6_r47nx"]
 [ext_resource type="AudioStream" uid="uid://dkgmeu53ik8qp" path="res://Assets/Sounds/kahoot_countdown.ogg" id="7_w3h60"]
+[ext_resource type="StyleBox" uid="uid://yivtfpayypbe" path="res://Assets/Styles/Window/ToolWindow.tres" id="9_x8pny"]
+[ext_resource type="Texture2D" uid="uid://cg0koet6pa2ip" path="res://Assets/Styles/Window/CloseBtn.png" id="10_k4fvc"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -171,5 +173,82 @@ autoplay = true
 
 [node name="ThemePlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_w3h60")
+
+[node name="Ending" type="Panel" parent="."]
+visible = false
+custom_minimum_size = Vector2(800, 500)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = 2.0
+offset_right = 400.0
+offset_bottom = 502.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = ExtResource("9_x8pny")
+
+[node name="Borders" type="MarginContainer" parent="Ending"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 22
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Layout" type="VBoxContainer" parent="Ending/Borders"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Ending/Borders/Layout"]
+layout_mode = 2
+text = "Průměrná odchylka"
+
+[node name="Average" type="LineEdit" parent="Ending/Borders/Layout"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label2" type="Label" parent="Ending/Borders/Layout"]
+layout_mode = 2
+text = "Maximální odchylka"
+
+[node name="Max" type="LineEdit" parent="Ending/Borders/Layout"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label3" type="Label" parent="Ending/Borders/Layout"]
+layout_mode = 2
+text = "Součet všech odchylek"
+
+[node name="Sum" type="LineEdit" parent="Ending/Borders/Layout"]
+layout_mode = 2
+alignment = 1
+
+[node name="Header" type="MarginContainer" parent="Ending"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 19.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 2
+
+[node name="Close" type="Button" parent="Ending/Header"]
+layout_mode = 2
+size_flags_horizontal = 8
+icon = ExtResource("10_k4fvc")
+flat = true
+
+[node name="Title" type="Label" parent="Ending/Header"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Skóre"
 
 [connection signal="pressed" from="Submit/VBox/Button" to="." method="_on_button_pressed"]
