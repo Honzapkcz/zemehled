@@ -78,7 +78,7 @@ func _on_play_game_pressed():
 	Global.answer_time = minutes.value * 60 + seconds.value
 	$Effect.play()
 	var tween: Tween = get_tree().create_tween()
-	tween.tween_property($Play, "position:y", 648, 1.0)
+	tween.tween_property($Play, "position:y", get_viewport_rect().size.y, 1.0)
 	tween.parallel().tween_property($Menu, "scale", Vector2(0.0, 0.0), 1.0).set_delay(0.5)
 	tween.parallel().tween_property($TextureRect, "modulate:a", 0.0, 1.0).set_delay(0.5)
 	tween.parallel().tween_property(person, "scale", Vector3(0.0, 0.0, 0.0), 1.0).set_delay(1.0)
