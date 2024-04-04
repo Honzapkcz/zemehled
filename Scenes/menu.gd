@@ -47,7 +47,8 @@ func on_settings_changed():
 
 func _on_play_pressed():
 	pop_open = true
-	get_tree().create_tween().tween_property($Play, "position:y", 140, 1.0)
+	$Play.visible = true
+	get_tree().create_tween().tween_property($Play, "position:y", get_viewport_rect().size.y - 550, 1.0)
 	$Effect.play()
 
 
@@ -63,8 +64,9 @@ func _on_exit_pressed():
 
 func _on_play_close_pressed():
 	pop_open = false
-	get_tree().create_tween().tween_property($Play, "position:y", 648, 1.0)
 	$Effect.play()
+	await get_tree().create_tween().tween_property($Play, "position:y", get_viewport_rect().size.y, 1.0).finished
+	$Play.visible = false
 
 
 func _on_play_game_pressed():
