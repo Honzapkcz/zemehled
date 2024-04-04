@@ -10,7 +10,7 @@ var order: PackedInt32Array
 
 func _ready():
 	$Status/Menu.get_popup().index_pressed.connect(on_menu_selected)
-	$Margin/Map.load_map(Global.game.map)
+	$Margin/SView/View/Map.load_map(Global.game.map)
 	$Image.custom_minimum_size = get_viewport_rect().size / 2
 	$Image.position.x = get_viewport_rect().size.x
 	Global.settings_changed.connect(on_settings_changed)
@@ -37,7 +37,7 @@ func on_menu_selected(index: int):
 		0: # Skip
 			time_left = 0
 		1: # Center
-			$Margin/Map.center_map()
+			$Margin/SView/View/Map.center_map()
 		2: # Settings
 			$Settings.open_menu()
 		3: # Leave
@@ -63,16 +63,16 @@ func mainloop():
 			if not playing or submit_clicked:
 				break
 		position_delta.append(round(sqrt((Global.game.positions[order[question]].round().x
-		- $Margin/Map.get_point().round().x)**2 + (Global.game.positions[order[question]].round().y
-		- $Margin/Map.get_point().round().y)**2)))
-		$Margin/Map.show_location(Global.game.positions[order[question]])
+		- $Margin/SView/View/Map.get_point().round().x)**2 + (Global.game.positions[order[question]].round().y
+		- $Margin/SView/View/Map.get_point().round().y)**2)))
+		$Margin/SView/View/Map.show_location(Global.game.positions[order[question]])
 		$DropEffect.play()
 		$Submit/VBox/Label.text = "Rozdíl: " + str(position_delta[-1])
-		$Margin/Map.can_point = false
+		$Margin/SView/View/Map.can_point = false
 		if playing:
 			await $Submit/VBox/Button.pressed
-		$Margin/Map.can_point = true
-		$Margin/Map.clear_point()
+		$Margin/SView/View/Map.can_point = true
+		$Margin/SView/View/Map.clear_point()
 		$Submit/VBox/Label.text = ""
 		$MoveEffect.play()
 		await get_tree().create_tween().tween_property($Image, "position:x", get_viewport_rect().size.x + 10, 1.0).finished

@@ -37,12 +37,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Map" parent="Margin" instance=ExtResource("3_yhxoe")]
+[node name="SView" type="SubViewportContainer" parent="Margin"]
+layout_mode = 2
+stretch = true
+
+[node name="View" type="SubViewport" parent="Margin/SView"]
+transparent_bg = true
+size = Vector2i(1274, 954)
+
+[node name="Map" parent="Margin/SView/View" instance=ExtResource("3_yhxoe")]
 
 [node name="Submit" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -56,6 +65,7 @@ offset_top = -71.0
 offset_right = 13.5
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 0
 theme_override_constants/margin_bottom = 50
 
 [node name="VBox" type="VBoxContainer" parent="Submit"]
@@ -69,6 +79,7 @@ text = " OK "
 
 [node name="Label" type="Label" parent="Submit/VBox"]
 layout_mode = 2
+mouse_filter = 0
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 32
 
@@ -118,6 +129,7 @@ offset_left = 3.0
 offset_top = 3.0
 offset_right = 145.0
 offset_bottom = 25.0
+mouse_filter = 0
 theme_override_constants/separation = 0
 
 [node name="Menu" type="MenuButton" parent="Status"]
