@@ -64,6 +64,7 @@ layout_mode = 2
 [node name="Button" type="Button" parent="Submit/VBox"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
 text = " OK "
 
 [node name="Label" type="Label" parent="Submit/VBox"]
@@ -76,8 +77,8 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = 2.0
-offset_right = 505.0
-offset_bottom = 303.0
+offset_right = 802.0
+offset_bottom = 480.0
 grow_horizontal = 0
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
@@ -121,6 +122,7 @@ theme_override_constants/separation = 0
 
 [node name="Menu" type="MenuButton" parent="Status"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "Menu"
 flat = false
 item_count = 4
@@ -137,6 +139,7 @@ popup/item_3/id = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
 theme_override_styles/read_only = ExtResource("1_iaj65")
 text = "99/99"
 editable = false
@@ -146,6 +149,7 @@ expand_to_text_length = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
 theme_override_styles/read_only = ExtResource("1_iaj65")
 text = "59:59"
 editable = false

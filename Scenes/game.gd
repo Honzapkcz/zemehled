@@ -12,6 +12,7 @@ func _ready():
 	$Status/Menu.get_popup().index_pressed.connect(on_menu_selected)
 	$Image.position.x = get_viewport_rect().size.x
 	$Margin/Map.load_map(Global.game.map)
+	$Image.size = get_viewport_rect().size / 4
 	Global.settings_changed.connect(on_settings_changed)
 	if Global.game.type == "classic":
 		for i in range(Global.game.rounds):
@@ -51,7 +52,7 @@ func mainloop():
 		if question >= Global.game.rounds:
 			break
 		$Image/Image/Border/Texture.texture = load(Global.game.images[order[question]])
-		get_tree().create_tween().tween_property($Image, "position:x", 649, 1.0)
+		get_tree().create_tween().tween_property($Image, "position:x", get_viewport_rect().size.x / 2, 1.0)
 		time_left = Global.answer_time
 		$Status/Round.text = "%02d/%02d" % [question + 1, Global.game.rounds]
 		while time_left >= 0:
@@ -91,10 +92,10 @@ func end():
 		x += i
 	$Ending/Borders/Layout/Sum.text = str(x)
 	$Ending/Borders/Layout/Average.text = str(x / position_delta.size())
-	get_tree().create_tween().tween_property($Ending, "position:y", 120, 1.0)
+	get_tree().create_tween().tween_property($Ending, "position:y", get_viewport_rect().size.y - 550, 1.0)
 	await $Ending/Header/Close.pressed
 	var tween: Tween = get_tree().create_tween()
-	tween.tween_property($Ending, "position:y", 650, 1.0)
+	tween.tween_property($Ending, "position:y", get_viewport_rect().size.y, 1.0)
 	tween.parallel().tween_property($Status, "position:x", -120, 1.0)
 	tween.parallel().tween_property($Image, "position:x", get_viewport_rect().size.x, 1.0).set_delay(0.25)
 	tween.parallel().tween_property($Margin, "scale", Vector2(0.0, 0.0), 1.0).set_delay(0.5)
