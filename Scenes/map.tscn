@@ -13,11 +13,13 @@ script = ExtResource("1_ocr7e")
 centered = false
 
 [node name="Point" type="Sprite2D" parent="Map"]
+scale = Vector2(2, 2)
 texture = ExtResource("2_fo2pd")
 offset = Vector2(6, -6)
 flip_v = true
 
 [node name="Point2" type="Sprite2D" parent="Map"]
+scale = Vector2(2, 2)
 texture = ExtResource("3_5fruq")
 centered = false
 offset = Vector2(-16, -32)
