@@ -15,7 +15,7 @@ func open_menu():
 	$Settings.position.x = get_viewport_rect().size.x
 	$Settings.visible = true
 	$AudioStreamPlayer.play()
-	get_tree().create_tween().tween_property($Settings, "position:x", 176, 1.0)
+	get_tree().create_tween().tween_property($Settings, "position:x", get_viewport_rect().size.x / 2 - 400, 1.0)
 
 func close_menu():
 	$AudioStreamPlayer.play()
