@@ -70,15 +70,15 @@ text = " OK "
 [node name="Label" type="Label" parent="Submit/VBox"]
 layout_mode = 2
 theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 32
 
 [node name="Image" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 2.0
-offset_right = 802.0
-offset_bottom = 480.0
+offset_left = -503.0
+offset_bottom = 303.0
 grow_horizontal = 0
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
