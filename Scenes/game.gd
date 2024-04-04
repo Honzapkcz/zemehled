@@ -12,7 +12,6 @@ func _ready():
 	$Status/Menu.get_popup().index_pressed.connect(on_menu_selected)
 	$Margin/SView/View/Map.load_map(Global.game.map)
 	$Image.custom_minimum_size = get_viewport_rect().size / 2
-	$Image.position.x = get_viewport_rect().size.x
 	Global.settings_changed.connect(on_settings_changed)
 	if Global.game.type == "classic":
 		for i in range(Global.game.rounds):
