@@ -10,8 +10,8 @@
 		"res://Games/Stredocesky/kutna-hora.jpg",
 		"res://Games/Stredocesky/zamek-lany.jpg",
 		"res://Games/Stredocesky/karlstejn.jpg",
-		"res://Games/Stredocesky/hrad-krakovec.jpgXXX",
-		"res://Games/Stredocesky/zamek-libice.jpgXXX",
+		"res://Games/Stredocesky/zamek-kacina.jpg",
+		"res://Games/Stredocesky/zamek-zleby.jpg",
 		"res://Games/Stredocesky/hrad-kokorin.jpg",
 		"res://Games/Stredocesky/zricenina-okor.jpg",
 		"res://Games/Stredocesky/borovsky-most.jpg"
@@ -20,8 +20,8 @@
 		[5465, 3050],
 		[1636, 2267],
 		[2308, 3099],
-		[0, 0],
-		[0, 0],
+		[5681, 2910],
+		[6080, 3336],
 		[3422, 822],
 		[2507, 2079],
 		[4972, 4187]
