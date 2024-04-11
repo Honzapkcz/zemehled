@@ -2,10 +2,10 @@
 	"type": "classic-random",
 	"name": "Středočeský kraj",
 	"description": "Vaším úkolem je vytipovat na mapě místo, kde se nachází kulturní památka na obrázku.\nTato hra je na téma kuturních památek Středočeského kraje.\nOmlouvám se za malou kvalitu mapy, přemigruji na nový systém jen co doluštím OpenStreetMap formát mapy.",
-	"difficulty": 8,
-	"rounds": 0,
+	"difficulty": 9,
+	"rounds": 8,
 	"thumbnail": "res://Games/Stredocesky/map-of-czech-republic-central-bohemia.png",
-	"map": "",
+	"map": "res://Games/Stredocesky/map.png",
 	"images": [
 		"res://Games/Stredocesky/kutna-hora.jpg",
 		"res://Games/Stredocesky/zamek-lany.jpg",
@@ -17,6 +17,13 @@
 		"res://Games/Stredocesky/borovsky-most.jpg"
 	],
 	"positions": [
-
+		[0, 0],
+		[0, 0],
+		[0, 0],
+		[0, 0],
+		[0, 0],
+		[0, 0],
+		[0, 0],
+		[0, 0]
 	]
 }
