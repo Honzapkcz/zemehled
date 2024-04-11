@@ -4,7 +4,7 @@
 	"description": "Vaším úkolem je vytipovat na mapě místo, kde se nachází kulturní památka na obrázku.\nTato hra je na téma pražských kuturních památek.",
 	"difficulty": 8,
 	"rounds": 8,
-	"thumbnail": "res://Games/Praha/map-of-czech-republic.png",
+	"thumbnail": "res://Games/Praha/map-of-czech-republic-prague.png",
 	"map": "res://Games/Praha/4096-v3.png",
 	"images": [
 		"res://Games/Praha/karluv-most.jpg",
