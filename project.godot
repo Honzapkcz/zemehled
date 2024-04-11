@@ -23,6 +23,7 @@ Global="*res://Scenes/global.tscn"
 
 window/size/viewport_width=1280
 window/size/viewport_height=960
+window/size/mode=4
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 mouse_cursor/custom_image="res://Assets/Cursors/arrow.png"
