@@ -7,14 +7,14 @@
 	"thumbnail": "res://Games/Stredocesky/map-of-czech-republic-central-bohemia.png",
 	"map": "",
 	"images": [
-		"Kutná Hora",
-		"Zámek Lány",
-		"Karlštějn",
-		"Hrad Krakovec",
-		"Zámek Libice",
-		"hrad Kokořín",
-		"zřícenina Okoř",
-		"Borovský most"
+		"res://Games/Stredocesky/kutna-hora.jpg",
+		"res://Games/Stredocesky/zamek-lany.jpg",
+		"res://Games/Stredocesky/karlstejn.jpg",
+		"res://Games/Stredocesky/hrad-krakovec.jpg",
+		"res://Games/Stredocesky/zamek-libice.jpg",
+		"res://Games/Stredocesky/hrad-kokorin.jpg",
+		"res://Games/Stredocesky/zricenina-okor.jpg",
+		"res://Games/Stredocesky/borovsky-most.jpg"
 	],
 	"positions": [
 
