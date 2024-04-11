@@ -5,7 +5,7 @@
 	"difficulty": 9,
 	"rounds": 8,
 	"thumbnail": "res://Games/Stredocesky/map-of-czech-republic-central-bohemia.png",
-	"map": "res://Games/Stredocesky/map.png",
+	"map": "res://Games/Stredocesky/map-6k.png",
 	"images": [
 		"res://Games/Stredocesky/kutna-hora.jpg",
 		"res://Games/Stredocesky/zamek-lany.jpg",
