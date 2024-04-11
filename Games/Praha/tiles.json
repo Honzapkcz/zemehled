@@ -15,6 +15,7 @@
 		"https://api.mapy.cz/v1/maptiles/basic/256/{z}/{x}/{y}?apikey=yeJ_tH15Ism_YfuC_K1NG_k5yIdArE_Y0uTo5Teal1T"
 	],
 	"logo": "https://api.mapy.cz/img/api/logo.svg",
+	"!Bohemia": "{z:6}/{x:34}/{y:21}",
 	"!Praha": "{z:9}/{x:276}/{y:173} # Closest I can get in one tile",
 	"!EndedHere": "https://api.mapy.cz/v1/maptiles/aerial/256/14/8855/5559?apikey=..."
 }
