@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dt7mvr5sycoaa"
-path="res://.godot/imported/map-of-czech-republic.png-2fbf99b3ecc9f8cc7c0bdadf2d9ef63a.ctex"
+uid="uid://ch0ha3k0po0fw"
+path="res://.godot/imported/kutna-hora.jpg-dd87fea04132346c07363ffd70d2c275.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Games/Praha/map-of-czech-republic.png"
-dest_files=["res://.godot/imported/map-of-czech-republic.png-2fbf99b3ecc9f8cc7c0bdadf2d9ef63a.ctex"]
+source_file="res://Games/Stredocesky/kutna-hora.jpg"
+dest_files=["res://.godot/imported/kutna-hora.jpg-dd87fea04132346c07363ffd70d2c275.ctex"]
 
 [params]
 
